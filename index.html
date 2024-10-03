@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="./src/output.css" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Avenir LT Std", sans-serif;
+      color: rgb(0, 0, 0);
+    }
+
+    .productImg {
+      position: relative;
+    }
+
+    .approveIcon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 11111;
+    }
+
+    .productCard:hover .productImg1 {
+      display: none;
+    }
+
+    .productImg2 {
+      display: none;
+    }
+
+    .productCard:hover .productImg2 {
+      display: block;
+    }
+
+    .quiz-back {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 100%;
+
+    }
+
+    .hero-back {
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+
+    }
+
+
+
+
+    /* -------slider------ */
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* -------slider------ */
+
+
+    /* ==========accordion start========== */
+
+
+
+    .collapsibles-wrapper .collapsible-trigger-btn {
+      background: none;
+      width: 100%;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      padding: 6px 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #979797;
+      position: relative;
+    }
+
+    .collapsibles-wrapper .collapsible-trigger-btn::after {
+      content: "+";
+      font-size: 30px;
+      font-weight: 400;
+      position: absolute;
+      right: -15px;
+    }
+
+    .collapsibles-wrapper.collapsible-tab__open .collapsible-trigger-btn::after {
+      content: "+";
+      transform: rotate(45deg);
+      font-size: 30px;
+
+    }
+
+    .collapsibles-wrapper .collapsible-content {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+
+    .collapsibles-wrapper.collapsible-tab__open .collapsible-content {
+      visibility: visible;
+      opacity: 1;
+    }
+
+
+    /* ==========accordion end========== */
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================Hero  start=============== -->
+  <section>
+    <div class=" hero-back lg:py-60 py-20" style=" background-image: url(./img/hero.jpg);">
+      <div class="container mx-auto">
+        <div class=" md:grid grid-cols-6 px-6 lg:px-0">
+          <div class=" md:col-span-6 md:col-start-7 ">
+            <div class="md:flex flex-col md:content-center  sm:content-end">
+              <h2 class=" lg:text-5xl text-white md:text-black text-center">bhave™ <strong
+                  class="text-white md:text-black">ANTI-AGING</strong></h2>
+              <h2 class=" lg:text-5xl text-white md:text-black text-center font-bold">RESCUE THERAPY</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==================Hero  end=============== -->
+  <!-- =============TRANSFORM start======== -->
+  <section>
+    <div class="container mx-auto">
+      <div class="xl:w-11/12 mx-auto px-3 xl:px-0">
+        <div class="md:grid grid-cols-12 gap-5 xl:gap-10 py-4 lg:py-6 xl:py-10">
+          <div class="md:col-span-5 lg:col-span-4 xl:col-span-6">
+            <div class="">
+              <h2
+                class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                TRANSFORM YOUR
+              </h2>
+              <h2
+                class="text-2xl lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                HAIR INTO ITS
+              </h2>
+              <h2
+                class="text-2xl lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                STRONGEST
+              </h2>
+              <h2
+                class="text-2xl lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                HEALTHIEST STATE
+              </h2>
+            </div>
+          </div>
+          <div class="md:col-span-7 lg:col-span-8  xl:col-span-6 mt-10 md:mt-0">
+            <div class=" mb-4 lg:mb-8">
+              <h2 class="text-2xl lg:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                REDISCOVER YOUTHFUL VIBRANCE
+              </h2>
+            </div>
+            <div class=" mb-3 lg:mb-8">
+              <p class="text-base text-black pb-4 text-justify lg:text-left">
+                Let's talk hair. Not just any hair - YOUR hair. It's not just
+                about looking good; it's about feeling fabulous, right? But
+                here's the thing; damaged hair can be a sneaky little bugger,
+                subtly aging us without even a polite warning. It's like,
+                hello, who invited you to this party?
+              </p>
+              <p class="text-base text-black pb-4 text-justify lg:text-left">
+                In our quest for beauty, our precious locks often get the
+                short end of the stick. Heatl styling, the sun playing tough,
+                overzealous colouring and those oh-so-tempting chemical
+                treatments - we've all been there, haven't we? The result is a
+                hair identity crisis: dull, spiritless strands that scream
+                " help me!" louder than a 90s boy band. </p>
+            </div>
+            <div class="">
+              <h2 class="text-2xl lg:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                TURN BACK TIME FOR YOUR HAIR
+              </h2>
+              <p class="text-base text-black pb-4 text-justify md:text-left my-1 md:my-4">
+                Enter bhave™ Rescue Therapy: an in-salon revolution that metamorphoses damaged hair into a state of
+                awe-inspiring splendour.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =============TRANSFORM end======== -->
+
+  <!-- ================TEMPORARY SOLUTION START============= -->
+  <section class="mt-5 xl:mt-20">
+    <div class="container mx-auto">
+      <div class="xl:w-11/12 mx-auto px-3 xl:px-0">
+        <div class=" md:grid grid-cols-12 gap-10">
+          <div class=" md:col-span-6">
+            <h2
+              class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+              TRANSFORM YOUR </h2>
+            <h2
+              class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+              TEMPORARY SOLUTION: </h2>
+            <div class=" mt-4">
+              <div class="">
+                <h2
+                  class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none text-center md:text-left mb-2 lg:mb-0">
+                  A COMPLETE JOURNEY</h2>
+                <h2
+                  class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none text-center md:text-left mb-2 lg:mb-0">
+                  TO COMPREHENSIVE</h2>
+                <h2
+                  class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none text-center md:text-left mb-2 lg:mb-0">
+                  REJUVENATION</h2>
+                <div class=" mt-4">
+                  <p class="text-base text-black pb-4 text-justify lg:text-left">At the heart of bhave™ Rescue Therapy
+                    is a multi-faceted approach,
+                    offering three crucial benefits:
+                    <strong>anti-aging,intensive repair</strong> and <strong>proactive care</strong>. It's a harmonious
+                    fusion of natural
+                    wisdom and scientific
+                    innovation, penetrating
+                    deep into the hair's structure to address and reverse the fundamental problems of damage and aging.
+                    The outcome is not
+                    just repair, but a complete rejuvenation. This comprehensive strategy ensures the enduring health
+                    and
+                    beauty of your
+                    hair.
+                  </p>
+                  <div class=" text-center md:text-left mt-2 lg:mt-10">
+                    <a href="#" class=" bg-[#F7B4C0] hover:bg-[#f7b4c0cb] px-6 py-2 rounded-full text-lg"> shop rescue
+                      at home</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="mt-10 md:mt-0  md:col-span-6">
+            <div class="swiper mySwiper ">
+              <div class="swiper-wrapper w-full ">
+                <div class="swiper-slide">
+                  <div class=" w-full  h-fit">
+                    <img class="" src="./img/slider01.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="w-full h-fit">
+                    <img class="" src="./img/slider02.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- ================TEMPORARY SOLUTION END============= -->
+  <!-- =================REVITALISE START=============== -->
+  <section class=" mt-5 md:mt-16 xl:mt-20">
+    <div class="container mx-auto">
+      <div class="xl:w-11/12 mx-auto px-3 xl:px-0">
+        <div class=" md:grid grid-cols-12 gap-10 lg:gap-20">
+          <div class=" md:col-span-6">
+            <div class="grid grid-cols-12 gap-2 lg:gap-4">
+              <div class=" col-span-6">
+                <img class=" w-full" src="./img/before.png" alt="">
+                <div class="">
+                  <h2 class=" text-3xl text-[#2e2c2cee] text-center mt-3">before</h2>
+                </div>
+              </div>
+              <div class=" col-span-6">
+                <img class=" w-full" src="./img/after.png" alt="">
+                <div class="">
+                  <h2 class=" text-3xl text-[#2e2c2cee] text-center mt-3">after</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class=" mt-10 md:mt-0 md:col-span-6">
+            <div class="">
+              <h2
+                class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                REVITALISE DULL
+              </h2>
+              <h2
+                class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                LIFELESS COLOUR</h2>
+            </div>
+
+            <div class="">
+              <p class="text-base text-black my-4 text-justify lg:text-left">
+                Got hair colour that’s more ‘meh’ than ‘yay’? Reawaken your hair’s brilliance. Transform dull tones into
+                a radiant
+                display of depth and shine. <strong>bhave™ Rescue Therapy</strong> reinvigorates your hair from the
+                inside out, repairing
+                both the
+                cuticle and the internal structure. This natural defence against fading boosts your colour's vibrancy
+                and luminosity,
+                resulting in improved light reflection and richer, more vivid hues in every strand. Experience a truly
+                luxurious and
+                healthier hair journey.
+              </p>
+            </div>
+
+            <div class=" mt-10">
+              <h2
+                class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                TAME FRIZZ, SPLIT ENDS
+              </h2>
+              <h2
+                class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none text-center md:text-left mb-2 lg:mb-0">
+                AND ROUGH TEXTURE</h2>
+            </div>
+
+            <div class="">
+              <p class="text-base text-black my-4 text-justify lg:text-left">
+                Refined smoothness awaits. Damaged hair often leads to frustrating frizz, split ends, and a rough
+                texture. <strong>bhave™ Rescue
+                  Therapy</strong> operates from within to mend these issues, smoothing imperfections. The result? Hair
+                that’s not
+                only smoother
+                but radiates a revitalised, youthful essence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =================REVITALISE END=============== -->
+
+  <!-- ===================COMBAT start============== -->
+  <section class=" mt-5 md:mt-16 xl:mt-20">
+    <div class="container mx-auto">
+      <div class="xl:w-11/12 mx-auto px-3 xl:px-0 h-full">
+        <div class="md:grid grid-cols-12 gap-10 lg:gap-20">
+          <div class=" col-span-6 content-center">
+            <div class="">
+              <div class="">
+                <div class="">
+                  <div class="">
+                    <h2
+                      class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                      COMBAT DRYNESS
+                    </h2>
+                    <h2
+                      class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none  text-center md:text-left mb-2 lg:mb-0">
+                      AND BRITTLENESS</h2>
+                  </div>
+                  <div class="">
+                    <p class="text-base text-black my-4 text-justify lg:text-left">
+                      Embark on a journey of hydration and strength. Revitalise dry and brittle hair, common signs of
+                      damage,
+                      into a soft,
+                      silky testament of health and vitality. Rejuvenation begins with restoring your hair’s inherent
+                      elasticity, enhancing
+                      its strength, and shielding against future damage.
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-6 lg:mt-10 xl:mt-20">
+                  <div class="">
+                    <h2
+                      class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center md:text-left mb-2 lg:mb-0">
+                      REPAIR</h2>
+                    <h2
+                      class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none  text-center md:text-left mb-2 lg:mb-0">
+                      REJUVENATE</h2>
+
+                    <h2
+                      class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none  text-center md:text-left mb-2 lg:mb-0">
+                      PROTECT
+                    </h2>
+
+                  </div>
+                  <div class="">
+                    <p class="text-base text-black my-4 text-justify lg:text-left">
+                      Embark on a journey of hydration and strength. Revitalise dry and brittle hair, common signs of
+                      damage,
+                      into a soft,
+                      silky testament of health and vitality. Rejuvenation begins with restoring your hair’s inherent
+                      elasticity, enhancing
+                      its strength, and shielding against future damage.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class=" xl:col-start-8 col-span-6 xl:col-span-5  w-full">
+            <div class="grid grid-cols-2  justify-end gap-3">
+              <div class="">
+                <img class=" w-full h-full" src="./img/here01.png" alt="">
+              </div>
+              <div class="">
+                <img class=" w-full" src="./img/here02.png" alt="">
+              </div>
+              <div class="">
+                <img class=" w-full" src="./img/here03.png" alt="">
+              </div>
+              <div class="">
+                <img class=" w-full" src="./img/here04.png" alt="">
+              </div>
+              <div class="">
+                <img class=" w-full" src="./img/here05.png" alt="">
+              </div>
+              <div class="">
+                <img class=" w-full" src="./img/here06.png" alt="">
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================COMBAT start============== -->
+
+  <!-- ===========color-safe start========== -->
+  <section class=" mt-5 md:mt-16 xl:mt-20">
+    <div class=" bg-[#FFD7E2] h-[1px]"></div>
+    <div class="mt-10 lg:my-20">
+      <div class="container mx-auto">
+        <div class="xl:w-11/12 mx-auto px-3 xl:px-0">
+          <div class="md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-5 lg:gap-16">
+            <div class=" mb-6 lg:mb-0">
+              <div class=" flex flex-col items-center">
+                <div class="">
+                  <img src="./img/conical-flask.png" alt="">
+                </div>
+                <div class=" mt-4">
+                  <h2 class=" uppercase text-xl font-bold text-center">Scientifically <br> BAcked</h2>
+                </div>
+              </div>
+            </div>
+            <div class=" mb-6 lg:mb-0">
+              <div class=" flex flex-col items-center">
+                <div class="">
+                  <img src="./img/medical-.png" alt="">
+                </div>
+                <div class=" mt-4">
+                  <h2 class=" uppercase text-xl font-bold text-center">Medical <br> gard</h2>
+                </div>
+              </div>
+            </div>
+            <div class=" mb-6 lg:mb-0">
+              <div class=" flex flex-col items-center">
+                <div class="">
+                  <img src="./img/gluten.png" alt="">
+                </div>
+                <div class=" mt-4">
+                  <h2 class=" uppercase text-xl font-bold text-center">gluten & <br> alcohol free</h2>
+                </div>
+              </div>
+            </div>
+            <div class=" mb-6 lg:mb-0">
+              <div class=" flex flex-col items-center">
+                <div class="">
+                  <img src="./img/approval.png" alt="">
+                </div>
+                <div class=" mt-4">
+                  <h2 class=" uppercase text-xl font-bold text-center">dermatologically <br> tested</h2>
+                </div>
+              </div>
+            </div>
+            <div class=" mb-6 lg:mb-0">
+              <div class=" flex flex-col items-center">
+                <div class="">
+                  <img src="./img/colour.png" alt="">
+                </div>
+                <div class=" mt-4">
+                  <h2 class=" uppercase text-xl font-bold text-center">clour safe</h2>
+                </div>
+              </div>
+            </div>
+            <div class=" mb-6 lg:mb-0">
+              <div class=" flex flex-col items-center">
+                <div class="">
+                  <img src="./img/organisation-100.png" alt="">
+                </div>
+                <div class=" mt-4">
+                  <h2 class=" uppercase text-xl font-bold text-center">sustainable <br> renewable <br>non-gmo</h2>
+                </div>
+              </div>
+            </div>
+            <div class=" mb-6 lg:mb-0">
+              <div class=" flex flex-col items-center">
+                <div class="">
+                  <img src="./img/bunny-100.png" alt="">
+                </div>
+                <div class=" mt-4">
+                  <h2 class=" uppercase text-xl font-bold text-center">Cruelty-free</h2>
+                </div>
+              </div>
+            </div>
+            <div class=" mb-6 lg:mb-0">
+              <div class=" flex flex-col items-center">
+                <div class="">
+                  <img src="./img/hair-100.png" alt="">
+                </div>
+                <div class=" mt-4">
+                  <h2 class=" uppercase text-xl font-bold text-center">91% smilar <br> to human hair</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class=" bg-[#FFD7E2] h-[1px]"></div>
+  </section>
+  <!-- ===========color-safe start========== -->
+
+  <!-- ==============EXPERTS START=========== -->
+  <section class="mt-5 md:mt-16 xl:mt-20">
+    <div class=" container mx-auto">
+      <div class="">
+        <p class=" text-lg text-center">rejuvenate with rescue therapy</p>
+        <h2 class=" text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center">
+          READY TO BEGIN?
+        </h2>
+        <p class=" text-lg text-center">choose your path below</p>
+      </div>
+      <div class="xl:grid grid-cols-12 gap-20 mt-10 lg:mt-0 px-3 lg:px-6 xl:px-0">
+        <div class=" col-span-6">
+          <div class=" md:grid grid-cols-2">
+
+            <div class=" md:h-full md:flex md:flex-row md:items-end justify-center lg:justify-start">
+              <div class="">
+                <h2
+                  class=" text-1xl  lg:text-2xl xl:text-3xl text-black leading-none font-bold text-center lg:text-left">
+                  LET THE EXPERTS</h2>
+                <p class=" text-1xl  lg:text-2xl xl:text-3xl text-black leading-none  text-center lg:text-left">
+                  ELEVATE YOUR HAIR</p>
+                <div class=" mt-4 text-center lg:text-left">
+                  <a href="#" class=" bg-[#F7B4C0] hover:bg-[#f7b4c0cb] px-6 py-2 rounded-full text-lg">FIND PARTNER
+                    SALONS</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="">
+              <img class="h-full" src="./img/Bella2.jpg" alt="">
+            </div>
+
+          </div>
+        </div>
+        <div class="mt-10 md:mt-0 col-span-6">
+          <div class=" md:grid grid-cols-2">
+
+            <div class=" md:h-full md:flex md:flex-row md:items-end justify-center lg:justify-start">
+              <div class="px-6 md:px-0">
+                <h2 class="text-xl  lg:text-2xl xl:text-3xl text-black leading-none text-center lg:text-left">
+
+                  <span class=" font-bold">PROFESSIONAL STYLISTS</span> ARE YOU READY
+                  TO ELEVATE YOUR CRAFT?
+                </h2>
+
+                <div class=" mt-4 text-center lg:text-left">
+                  <a href="#" class=" bg-[#F7B4C0] hover:bg-[#f7b4c0cb] px-6 py-2 rounded-full text-lg">SALON LOGIN</a>
+                </div>
+
+              </div>
+            </div>
+            <div class=" flex items-end mt-6">
+              <img class="h-full" src="./img/bella22.jpg" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==============EXPERTS END=========== -->
+
+  <!-- ================FAQ START=========== -->
+  <section class="mt-5 md:mt-16 xl:mt-20">
+    <div class=" container mx-auto">
+      <h2 class=" text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center  mb-2 lg:mb-0">
+        FREQUENTLY ASKED <span class=" font-bold">QUESTIONS</span></h2>
+      <div class="lg:w-3/5 mx-auto pl-3 pr-5 xl:px-0">
+        <div class=" mt-10">
+          <div class="collapsible-tabs__wrapper">
+            <div class="collapsibles-wrapper">
+
+              <p type="button"
+                class="collapsible-trigger-btn text-sm lg:text-base font-medium  lg:font-semibold w-11/12">
+                WHAT IS THE MAIN INGREDIENT USED IN BHAVE™ RESCUE
+
+              </p>
+              <div class="collapsible-content mt-3">
+                <div class="collapsible-content__inner">
+                  <p class=" text-sm lg:text-base  mb-4">
+                    Step into the world of bioactive keratin, where science and nature converge to bring you the
+                    ultimate solution for
+                    youthful, vibrant hair. This isn't just any ingredient; it's a powerhouse of strength and
+                    protection, naturally integral
+                    to hair, skin and nails.
+
+                  </p>
+
+                  <p class=" text-base mb-4">
+                    Bioactive keratin is a form of keratin that is functional and active, meaning it can interact
+                    beneficially with living
+                    cells, particularly those in human hair and skin. Unlike regular keratin, which might be denatured
+                    or less active due to
+                    harsh extraction processes, bioactive keratin is extracted in a way that preserves its natural
+                    structure and active
+                    properties.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    This type of keratin closely resembles the keratin found in human hair, making it highly effective
+                    for hair
+                    rejuvenation. When applied, it can penetrate the hair, bonding with the natural keratin present.
+                    This results in various
+                    benefits like improved hair strength, increased elasticity and enhanced moisture retention,
+                    contributing to healthier,
+                    more resilient hair.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    Here's the real breakthrough: our keratin is a game-changer in anti-aging hair care. It goes beyond
+                    mere damage repair –
+                    it rejuvenates your hair right down to the cellular level, stimulating collagen production. Backed
+                    by scientific
+                    research, this process is essential for maintaining your hair's youthful essence. Collagen, the
+                    secret to hair's
+                    elasticity and vibrancy, plays a critical role in achieving that timeless appearance.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="collapsibles-wrapper">
+
+              <p type="button"
+                class="collapsible-trigger-btn text-sm lg:text-base font-medium  lg:font-semibold w-11/12">
+                WHAT IS THE MAIN INGREDIENT USED IN BHAVE™ RESCUE
+
+              </p>
+              <div class="collapsible-content mt-3">
+                <div class="collapsible-content__inner">
+                  <p class=" text-sm lg:text-base  mb-4">
+                    Step into the world of bioactive keratin, where science and nature converge to bring you the
+                    ultimate solution for
+                    youthful, vibrant hair. This isn't just any ingredient; it's a powerhouse of strength and
+                    protection, naturally integral
+                    to hair, skin and nails.
+
+                  </p>
+
+                  <p class=" text-base mb-4">
+                    Bioactive keratin is a form of keratin that is functional and active, meaning it can interact
+                    beneficially with living
+                    cells, particularly those in human hair and skin. Unlike regular keratin, which might be denatured
+                    or less active due to
+                    harsh extraction processes, bioactive keratin is extracted in a way that preserves its natural
+                    structure and active
+                    properties.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    This type of keratin closely resembles the keratin found in human hair, making it highly effective
+                    for hair
+                    rejuvenation. When applied, it can penetrate the hair, bonding with the natural keratin present.
+                    This results in various
+                    benefits like improved hair strength, increased elasticity and enhanced moisture retention,
+                    contributing to healthier,
+                    more resilient hair.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    Here's the real breakthrough: our keratin is a game-changer in anti-aging hair care. It goes beyond
+                    mere damage repair –
+                    it rejuvenates your hair right down to the cellular level, stimulating collagen production. Backed
+                    by scientific
+                    research, this process is essential for maintaining your hair's youthful essence. Collagen, the
+                    secret to hair's
+                    elasticity and vibrancy, plays a critical role in achieving that timeless appearance.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="collapsibles-wrapper">
+
+              <p type="button"
+                class="collapsible-trigger-btn text-sm lg:text-base font-medium  lg:font-semibold w-11/12">
+                WHAT IS THE MAIN INGREDIENT USED IN BHAVE™ RESCUE
+
+              </p>
+              <div class="collapsible-content mt-3">
+                <div class="collapsible-content__inner">
+                  <p class=" text-sm lg:text-base  mb-4">
+                    Step into the world of bioactive keratin, where science and nature converge to bring you the
+                    ultimate solution for
+                    youthful, vibrant hair. This isn't just any ingredient; it's a powerhouse of strength and
+                    protection, naturally integral
+                    to hair, skin and nails.
+
+                  </p>
+
+                  <p class=" text-base mb-4">
+                    Bioactive keratin is a form of keratin that is functional and active, meaning it can interact
+                    beneficially with living
+                    cells, particularly those in human hair and skin. Unlike regular keratin, which might be denatured
+                    or less active due to
+                    harsh extraction processes, bioactive keratin is extracted in a way that preserves its natural
+                    structure and active
+                    properties.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    This type of keratin closely resembles the keratin found in human hair, making it highly effective
+                    for hair
+                    rejuvenation. When applied, it can penetrate the hair, bonding with the natural keratin present.
+                    This results in various
+                    benefits like improved hair strength, increased elasticity and enhanced moisture retention,
+                    contributing to healthier,
+                    more resilient hair.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    Here's the real breakthrough: our keratin is a game-changer in anti-aging hair care. It goes beyond
+                    mere damage repair –
+                    it rejuvenates your hair right down to the cellular level, stimulating collagen production. Backed
+                    by scientific
+                    research, this process is essential for maintaining your hair's youthful essence. Collagen, the
+                    secret to hair's
+                    elasticity and vibrancy, plays a critical role in achieving that timeless appearance.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="collapsibles-wrapper">
+
+              <p type="button"
+                class="collapsible-trigger-btn text-sm lg:text-base font-medium  lg:font-semibold w-11/12">
+                WHAT IS THE MAIN INGREDIENT USED IN BHAVE™ RESCUE
+
+              </p>
+              <div class="collapsible-content mt-3">
+                <div class="collapsible-content__inner">
+                  <p class=" text-sm lg:text-base  mb-4">
+                    Step into the world of bioactive keratin, where science and nature converge to bring you the
+                    ultimate solution for
+                    youthful, vibrant hair. This isn't just any ingredient; it's a powerhouse of strength and
+                    protection, naturally integral
+                    to hair, skin and nails.
+
+                  </p>
+
+                  <p class=" text-base mb-4">
+                    Bioactive keratin is a form of keratin that is functional and active, meaning it can interact
+                    beneficially with living
+                    cells, particularly those in human hair and skin. Unlike regular keratin, which might be denatured
+                    or less active due to
+                    harsh extraction processes, bioactive keratin is extracted in a way that preserves its natural
+                    structure and active
+                    properties.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    This type of keratin closely resembles the keratin found in human hair, making it highly effective
+                    for hair
+                    rejuvenation. When applied, it can penetrate the hair, bonding with the natural keratin present.
+                    This results in various
+                    benefits like improved hair strength, increased elasticity and enhanced moisture retention,
+                    contributing to healthier,
+                    more resilient hair.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    Here's the real breakthrough: our keratin is a game-changer in anti-aging hair care. It goes beyond
+                    mere damage repair –
+                    it rejuvenates your hair right down to the cellular level, stimulating collagen production. Backed
+                    by scientific
+                    research, this process is essential for maintaining your hair's youthful essence. Collagen, the
+                    secret to hair's
+                    elasticity and vibrancy, plays a critical role in achieving that timeless appearance.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="collapsibles-wrapper">
+
+              <p type="button"
+                class="collapsible-trigger-btn text-sm lg:text-base font-medium  lg:font-semibold w-11/12">
+                WHAT IS THE MAIN INGREDIENT USED IN BHAVE™ RESCUE
+
+              </p>
+              <div class="collapsible-content mt-3">
+                <div class="collapsible-content__inner">
+                  <p class=" text-sm lg:text-base  mb-4">
+                    Step into the world of bioactive keratin, where science and nature converge to bring you the
+                    ultimate solution for
+                    youthful, vibrant hair. This isn't just any ingredient; it's a powerhouse of strength and
+                    protection, naturally integral
+                    to hair, skin and nails.
+
+                  </p>
+
+                  <p class=" text-base mb-4">
+                    Bioactive keratin is a form of keratin that is functional and active, meaning it can interact
+                    beneficially with living
+                    cells, particularly those in human hair and skin. Unlike regular keratin, which might be denatured
+                    or less active due to
+                    harsh extraction processes, bioactive keratin is extracted in a way that preserves its natural
+                    structure and active
+                    properties.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    This type of keratin closely resembles the keratin found in human hair, making it highly effective
+                    for hair
+                    rejuvenation. When applied, it can penetrate the hair, bonding with the natural keratin present.
+                    This results in various
+                    benefits like improved hair strength, increased elasticity and enhanced moisture retention,
+                    contributing to healthier,
+                    more resilient hair.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    Here's the real breakthrough: our keratin is a game-changer in anti-aging hair care. It goes beyond
+                    mere damage repair –
+                    it rejuvenates your hair right down to the cellular level, stimulating collagen production. Backed
+                    by scientific
+                    research, this process is essential for maintaining your hair's youthful essence. Collagen, the
+                    secret to hair's
+                    elasticity and vibrancy, plays a critical role in achieving that timeless appearance.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="collapsibles-wrapper">
+
+              <p type="button"
+                class="collapsible-trigger-btn text-sm lg:text-base font-medium  lg:font-semibold w-11/12">
+                WHAT IS THE MAIN INGREDIENT USED IN BHAVE™ RESCUE
+
+              </p>
+              <div class="collapsible-content mt-3">
+                <div class="collapsible-content__inner">
+                  <p class=" text-sm lg:text-base  mb-4">
+                    Step into the world of bioactive keratin, where science and nature converge to bring you the
+                    ultimate solution for
+                    youthful, vibrant hair. This isn't just any ingredient; it's a powerhouse of strength and
+                    protection, naturally integral
+                    to hair, skin and nails.
+
+                  </p>
+
+                  <p class=" text-base mb-4">
+                    Bioactive keratin is a form of keratin that is functional and active, meaning it can interact
+                    beneficially with living
+                    cells, particularly those in human hair and skin. Unlike regular keratin, which might be denatured
+                    or less active due to
+                    harsh extraction processes, bioactive keratin is extracted in a way that preserves its natural
+                    structure and active
+                    properties.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    This type of keratin closely resembles the keratin found in human hair, making it highly effective
+                    for hair
+                    rejuvenation. When applied, it can penetrate the hair, bonding with the natural keratin present.
+                    This results in various
+                    benefits like improved hair strength, increased elasticity and enhanced moisture retention,
+                    contributing to healthier,
+                    more resilient hair.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    Here's the real breakthrough: our keratin is a game-changer in anti-aging hair care. It goes beyond
+                    mere damage repair –
+                    it rejuvenates your hair right down to the cellular level, stimulating collagen production. Backed
+                    by scientific
+                    research, this process is essential for maintaining your hair's youthful essence. Collagen, the
+                    secret to hair's
+                    elasticity and vibrancy, plays a critical role in achieving that timeless appearance.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="collapsibles-wrapper">
+
+              <p type="button"
+                class="collapsible-trigger-btn text-sm lg:text-base font-medium  lg:font-semibold w-11/12">
+                WHAT IS THE MAIN INGREDIENT USED IN BHAVE™ RESCUE
+
+              </p>
+              <div class="collapsible-content mt-3">
+                <div class="collapsible-content__inner">
+                  <p class=" text-sm lg:text-base  mb-4">
+                    Step into the world of bioactive keratin, where science and nature converge to bring you the
+                    ultimate solution for
+                    youthful, vibrant hair. This isn't just any ingredient; it's a powerhouse of strength and
+                    protection, naturally integral
+                    to hair, skin and nails.
+
+                  </p>
+
+                  <p class=" text-base mb-4">
+                    Bioactive keratin is a form of keratin that is functional and active, meaning it can interact
+                    beneficially with living
+                    cells, particularly those in human hair and skin. Unlike regular keratin, which might be denatured
+                    or less active due to
+                    harsh extraction processes, bioactive keratin is extracted in a way that preserves its natural
+                    structure and active
+                    properties.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    This type of keratin closely resembles the keratin found in human hair, making it highly effective
+                    for hair
+                    rejuvenation. When applied, it can penetrate the hair, bonding with the natural keratin present.
+                    This results in various
+                    benefits like improved hair strength, increased elasticity and enhanced moisture retention,
+                    contributing to healthier,
+                    more resilient hair.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    Here's the real breakthrough: our keratin is a game-changer in anti-aging hair care. It goes beyond
+                    mere damage repair –
+                    it rejuvenates your hair right down to the cellular level, stimulating collagen production. Backed
+                    by scientific
+                    research, this process is essential for maintaining your hair's youthful essence. Collagen, the
+                    secret to hair's
+                    elasticity and vibrancy, plays a critical role in achieving that timeless appearance.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="collapsibles-wrapper">
+
+              <p type="button"
+                class="collapsible-trigger-btn text-sm lg:text-base font-medium  lg:font-semibold w-11/12">
+                WHAT IS THE MAIN INGREDIENT USED IN BHAVE™ RESCUE
+
+              </p>
+              <div class="collapsible-content mt-3">
+                <div class="collapsible-content__inner">
+                  <p class=" text-sm lg:text-base  mb-4">
+                    Step into the world of bioactive keratin, where science and nature converge to bring you the
+                    ultimate solution for
+                    youthful, vibrant hair. This isn't just any ingredient; it's a powerhouse of strength and
+                    protection, naturally integral
+                    to hair, skin and nails.
+
+                  </p>
+
+                  <p class=" text-base mb-4">
+                    Bioactive keratin is a form of keratin that is functional and active, meaning it can interact
+                    beneficially with living
+                    cells, particularly those in human hair and skin. Unlike regular keratin, which might be denatured
+                    or less active due to
+                    harsh extraction processes, bioactive keratin is extracted in a way that preserves its natural
+                    structure and active
+                    properties.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    This type of keratin closely resembles the keratin found in human hair, making it highly effective
+                    for hair
+                    rejuvenation. When applied, it can penetrate the hair, bonding with the natural keratin present.
+                    This results in various
+                    benefits like improved hair strength, increased elasticity and enhanced moisture retention,
+                    contributing to healthier,
+                    more resilient hair.
+
+                  </p>
+
+
+                  <p class=" text-base mb-4">
+                    Here's the real breakthrough: our keratin is a game-changer in anti-aging hair care. It goes beyond
+                    mere damage repair –
+                    it rejuvenates your hair right down to the cellular level, stimulating collagen production. Backed
+                    by scientific
+                    research, this process is essential for maintaining your hair's youthful essence. Collagen, the
+                    secret to hair's
+                    elasticity and vibrancy, plays a critical role in achieving that timeless appearance.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ================FAQ END=========== -->
+  <!-- ==============BOUGHT START============ -->
+  <section class="my-16">
+    <div class="container mx-auto">
+      <div class="xl:w-11/12 mx-auto px-3 xl:px-0">
+        <h2 class="text-2xl  lg:text-3xl xl:text-4xl text-black leading-none font-bold text-center  mb-2 lg:mb-0">
+          CUSTOMERS ALSO <strong>BOUGHT</strong></h2>
+        <div class="md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-10 mt-16">
+          <div class=" px-3 py-4 productCard   border  border-transparent rounded-lg hover:border-[#F7B4C0]">
+            <div class="w-full productImg">
+              <div class="productImg1">
+                <a href="#"><img class="object-fit h-[250px]  w-full" src="./img/p1.jpg" alt=""></a>
+              </div>
+
+              <div class="productImg2">
+                <a href="#"><img class="object-fit h-[250px]  w-full" src="./img/p2.jpg" alt=""></a>
+              </div>
+
+              <div class="approveIcon w-20 h-20 rounded-full">
+                <img src="./img/AWARD-WINNERpng.png" alt="">
+              </div>
+            </div>
+            <div class=" mt-3">
+              <div class=" flex items-center  justify-center gap-2">
+                <div class="">
+                  <ul class=" flex gap-1">
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                  </ul>
+                </div>
+                <div class="">
+                  <p class=" text-base underline"><span class="">32</span> Reviews</p>
+                </div>
+              </div>
+              <div class=" mt-2">
+                <h2 class=" text-lg font-medium text-center">bhave™</h2>
+                <h2 class="text-xl font-bold text-center">rescue conditioner</h2>
+                <h2 class="mt-3 text-xl font-semibold text-center"> <span>$</span>47.25</h2>
+                <a href="#">
+                  <div class=" mt-2 bg-[#F7B4C0] rounded-full text-center px-4 py-1 ">
+                    add to cart
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class=" px-3 py-4 productCard   border  border-transparent rounded-lg hover:border-[#F7B4C0]">
+            <div class="w-full productImg">
+              <div class="productImg1">
+                <a href="#"><img class="object-fit h-[250px]  w-full" src="./img/p1.jpg" alt=""></a>
+              </div>
+
+              <div class="productImg2">
+                <a href="#"><img class="object-fit h-[250px]  w-full" src="./img/p2.jpg" alt=""></a>
+              </div>
+            </div>
+            <div class=" mt-3">
+              <div class=" flex items-center  justify-center gap-2">
+                <div class="">
+                  <ul class=" flex gap-1">
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                  </ul>
+                </div>
+                <div class="">
+                  <p class=" text-base underline"><span class="">32</span> Reviews</p>
+                </div>
+              </div>
+              <div class=" mt-2">
+                <h2 class=" text-lg font-medium text-center">bhave™</h2>
+                <h2 class="text-xl font-bold text-center">rescue conditioner</h2>
+                <h2 class="mt-3 text-xl font-semibold text-center"> <span>$</span>47.25</h2>
+                <a href="#">
+                  <div class=" mt-2 bg-[#F7B4C0] rounded-full text-center px-4 py-1 ">
+                    add to cart
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class=" px-3 py-4 productCard   border  border-transparent rounded-lg hover:border-[#F7B4C0]">
+            <div class="w-full productImg">
+              <div class="productImg1">
+                <a href="#"><img class="object-fit h-[250px]  w-full" src="./img/p1.jpg" alt=""></a>
+              </div>
+
+              <div class="productImg2">
+                <a href="#"><img class="object-fit h-[250px]  w-full" src="./img/p2.jpg" alt=""></a>
+              </div>
+            </div>
+            <div class=" mt-3">
+              <div class=" flex items-center  justify-center gap-2">
+                <div class="">
+                  <ul class=" flex gap-1">
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                  </ul>
+                </div>
+                <div class="">
+                  <p class=" text-base underline"><span class="">32</span> Reviews</p>
+                </div>
+              </div>
+              <div class=" mt-2">
+                <h2 class=" text-lg font-medium text-center">bhave™</h2>
+                <h2 class="text-xl font-bold text-center">rescue conditioner</h2>
+                <h2 class="mt-3 text-xl font-semibold text-center"> <span>$</span>47.25</h2>
+                <a href="#">
+                  <div class=" mt-2 bg-[#F7B4C0] rounded-full text-center px-4 py-1 ">
+                    add to cart
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class=" px-3 py-4 productCard   border  border-transparent rounded-lg hover:border-[#F7B4C0]">
+            <div class="w-full productImg">
+              <div class="productImg1">
+                <a href="#"><img class="object-fit h-[250px]  w-full" src="./img/p1.jpg" alt=""></a>
+              </div>
+
+              <div class="productImg2">
+                <a href="#"><img class="object-fit h-[250px]  w-full" src="./img/p2.jpg" alt=""></a>
+              </div>
+            </div>
+            <div class=" mt-3">
+              <div class=" flex items-center  justify-center gap-2">
+                <div class="">
+                  <ul class=" flex gap-1">
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                    <li class=" text-base"><i class="fa-solid fa-star text-[#F7B4C0]"></i></li>
+                  </ul>
+                </div>
+                <div class="">
+                  <p class=" text-base underline"><span class="">32</span> Reviews</p>
+                </div>
+              </div>
+              <div class=" mt-2">
+                <h2 class=" text-lg font-medium text-center">bhave™</h2>
+                <h2 class="text-xl font-bold text-center">rescue conditioner</h2>
+                <h2 class="mt-3 text-xl font-semibold text-center"> <span>$</span>47.25</h2>
+                <a href="#">
+                  <div class=" mt-2 bg-[#F7B4C0] rounded-full text-center px-4 py-1 ">
+                    add to cart
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==============BOUGHT END============ -->
+
+  <!-- ================quiz start============= -->
+  <section>
+    <div class=" quiz-back py-6 lg:py-10 " style=" background-image: url(./img/quize-back.jpg);">
+      <div class="container mx-auto">
+        <div class="">
+          <div class="md:grid grid-cols-12">
+            <div class=" col-span-7 lg:col-span-6 xl:col-span-4 px-3 xl:px-0">
+              <h2 class=" text-2xl  lg:text-3xl xl:text-4xl text-center lg:text-left text-black">DISCOVER YOUR</h2>
+              <h2 class="text-2xl  lg:text-3xl xl:text-4xl text-center lg:text-left text-black font-bold">HAIR ROUTINE
+              </h2>
+              <p class=" text-lg leading-7 my-4 text-center lg:text-left">Get personalised haircare recommendations when
+                you take our 5 minute,
+                expert-crafted hair quiz.</p>
+              <div class="text-center lg:text-left mt-2 lg:mt-10">
+                <a href="#" class=" bg-[#F7B4C0] rounded-full text-center px-8 py-2 text-lg  font-medium">
+                  take the quiz
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ================quiz end============= -->
+
+
+
+  <!-- =========script======= -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
+      loop: true,
+    });
+  </script>
+  <!-- =========script======= -->
+
+  <!-- ===========accordion========= -->
+  <script>
+    const collapsibleButtons = document.querySelectorAll(
+      ".collapsible-trigger-btn"
+    );
+
+    collapsibleButtons.forEach((collapsibleButton) => {
+      const collapsibleContentDataHeight =
+        collapsibleButton.nextElementSibling.offsetHeight;
+      collapsibleButton.nextElementSibling.style.height = 0;
+      collapsibleButton.addEventListener("click", (e) => {
+        if (
+          !e.currentTarget.parentElement.classList.contains("collapsible-tab__open")
+        ) {
+          e.currentTarget.parentElement.classList.toggle("collapsible-tab__open");
+          e.currentTarget.nextElementSibling.style.height = `${collapsibleContentDataHeight}px`;
+        } else {
+          e.currentTarget.parentElement.classList.remove("collapsible-tab__open");
+          e.currentTarget.nextElementSibling.style.height = 0;
+        }
+      });
+    });
+
+  </script>
+  <!-- ===========accordion========= -->
+</body>
+
+</html>
